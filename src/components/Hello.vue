@@ -66,14 +66,13 @@
                         Education
                       </h5>
                     </div>
-                    <div v-for="post in posts" :key="post.id">
-                      <div v-if="post.area === 'Education'">
-                        <h4>{{post.title}}</h4>
+                      <div>
+                        <h4>Instituto Tecnológico de Estudios Superiores de Monterrey (ITESM)</h4>
                         <p class="lead">
-                          {{post.body}}
+                          ‣ Bachelor in Computer Science and Software Engineering <br>
+                          ‣ GPA 87/100
                         </p>
                       </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -94,21 +93,47 @@
                     Experience
                   </h5>
                 </div>
-                <div v-for="post in posts" :key="post.id" class="about-me pt-4 pt-md-0">
-                  <div v-if="post.area === 'Experience'">
+                  <div>
                     <div class="row">
                       <div class="col-md-8">
-                        <h4>{{post.title}}</h4>
+                        <h4>Ecaresoft | Junior Product Manager</h4>
                         <p class="lead">
-                          {{post.body}}
+                          ‣ Research for a digital tool that consists of helping ensure optimal allocation of healthcare resources, considering the client, business, and the technological area of the product to deliver better user guides.
+                        </p>
+                      </div>
+                      <div class="col-md-2"></div>
+                      <div class="col-md-2 text-right"> <p class="lead"> 2020 </p>
+                    </div>
+                  </div>
+                  </div>
+                  <div>
+                    <div class="row">
+                      <div class="col-md-8">
+                        <h4>UBER | High-Capacity Matching | Software Engineering Intern</h4>
+                        <p class="lead">
+                          ‣ Developed an internal tool using flow-typed JavaScript with React, Redux, and proprietary company services. <br>
+                          ‣ Implemented a system design process in the development of the above tool to improve communication with stakeholders.
+                        </p>
+                      </div>
+                      <div class="col-md-2"></div>
+                      <div class="col-md-2 text-right"> <p class="lead">Summer 2020 </p>
+                    </div>
+                  </div>
+                  </div>
+                  <div>
+                    <div class="row">
+                      <div class="col-md-8">
+                        <h4>NOWPORTS (Y Combinator, Winter 2019 batch) | Software Engineering Intern</h4>
+                        <p class="lead">
+                          ‣ Developed new features and gave maintenance to web applications for customers, administrators, and internal departments such as sales and pricing through APIs and technologies like React, Redux, and NodeJS. <br>
+                          ‣ Developed internal front-end libraries to ensure consistency and promote code reusability across the NOWPORTS codebase.
                         </p>
                       </div>
                     <div class="col-md-2"></div>
-                    <div class="col-md-2 text-right"> <p class="lead"> {{post.year}} </p>
-                    </div>
+                    <div class="col-md-2 text-right"> <p class="lead"> 2019-2020 </p>
                     </div>
                   </div>
-                </div>
+                  </div>
               </div>
             </div>
           </div>
@@ -128,21 +153,50 @@
                     Projects
                   </h5>
                 </div>
-                <div v-for="post in posts" :key="post.id" class="about-me pt-4 pt-md-0">
-                  <div v-if="post.area === 'Project'">
+                  <div>
                     <div class="row">
                       <div class="col-md-8">
-                        <h4>{{post.title}}</h4>
+                        <h4>Mayúsculas, iOS App Project | Software Developer</h4>
                         <p class="lead">
-                          {{post.body}}
+                          Designed, prototyped, and developed an educational app for ITESM’s literature department written in Swift. <br>
+                          Coming soon to the App Store (expected late 2020 to early 2021)
                         </p>
                       </div>
                     <div class="col-md-2"></div>
-                    <div class="col-md-2 text-right"> <p class="lead"> {{post.year}} </p>
+                    <div class="col-md-2 text-right"> <p class="lead"> 2020 </p>
                     </div>
                     </div>
                   </div>
-                </div>
+
+                  <div>
+                    <div class="row">
+                      <div class="col-md-8">
+                        <h4>For The Love Of Tea, Google CodeU Program | Participant</h4>
+                        <p class="lead">
+                          ‣ Collaborated with a team of peers to design and implement a web application using Java, JavaScript, HTML and CSS for 10 weeks, leveraging various Google Cloud Platform APIs, including App Engine and Datastore. <br>
+                          ‣ Practiced industry best practices such as: contributing to open-source software using Git and GitHub, conducting code reviews with/for teammates, extending an existing codebase, and designing new components leading them to completion.
+                        </p>
+                      </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2 text-right"> <p class="lead"> 2019 </p>
+                    </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="row">
+                      <div class="col-md-8">
+                        <h4>Answer Quest, Video Game Development | Software Developer</h4>
+                        <p class="lead">
+                          ‣ Developed an educational video game in Java that was operated by a fully functioning, secure, and manageable database with a team of peers. <br>
+                          ‣ Created and designed the storyboard and prototypes after doing research with the team and a professional in special education, coming up with an additional well-designed administrator interface made in Java and MySQL.
+                        </p>
+                      </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2 text-right"> <p class="lead"> 2019 </p>
+                    </div>
+                    </div>
+                  </div>
               </div>
             </div>
           </div>
@@ -162,24 +216,36 @@
                     Professional Development
                   </h5>
                 </div>
-                <div v-for="post in posts" :key="post.id" class="about-me pt-4 pt-md-0">
-                  <div v-if="post.area === 'PD'">
+                  <div>
                     <div class="row">
                       <div class="col-sm-3 col-md-3">
-                        <img v-if="post.title === 'President | Women in Technology at ITESM (WIT)'" src="../assets/img/wit.png" class="img-fluid b-shadow-a rounded-img" style="border-radius=50%" alt="">
-                        <img v-else src="../assets/img/twitter.png" class="img-fluid b-shadow-a rounded-img" style="border-radius=50%" alt="">
+                        <img src="../assets/img/wit.png" class="img-fluid b-shadow-a rounded-img" style="border-radius=50%" alt="">
                       </div>
                       <div class="col-md-6">
-                        <h4>{{post.title}}</h4>
+                        <h4>President | Women in Technology at ITESM (WIT)</h4>
                         <p class="lead">
-                          {{post.body}}
+                          ‣ WIT is a student chapter whose mission is to create a community committed to the empowerment of all women in STEM; connecting, developing, and networking with female talent.
                         </p>
                       </div>
-                    <div class="col-md-2 text-right"> <p class="lead"> {{post.year}} </p>
+                    <div class="col-md-2 text-right"> <p class="lead"> 2020 </p>
                     </div>
                     </div>
                   </div>
-                </div>
+
+                  <div>
+                    <div class="row">
+                      <div class="col-sm-3 col-md-3">
+                        <img src="../assets/img/twitter.png" class="img-fluid b-shadow-a rounded-img" style="border-radius=50%" alt="">
+                      </div>
+                      <div class="col-md-6">
+                        <h4>Twitter’s #DevelopHER</h4>
+                        <p class="lead">
+                          ‣ One of 38 attendees selected out of 1,000+ applicants to attend a two-day interactive program for second-year computer science majors focused on professional and technical development including networking, personal branding, resume writing and code challenges.                        </p>
+                      </div>
+                    <div class="col-md-2 text-right"> <p class="lead"> 2019 </p>
+                    </div>
+                    </div>
+                  </div>
               </div>
             </div>
           </div>
@@ -199,14 +265,39 @@
                     Extracurricular Activities 
                   </h5>
                 </div>
-                <div v-for="post in posts" :key="post.id" class="about-me pt-4 pt-md-0">
-                  <div v-if="post.area === 'Other'">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <p class="lead">
-                          {{post.body}}
-                        </p>
-                      </div>
+                <div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <p class="lead">
+                        ‣ Coordinator of communication in ITESM’s CS & software engineering student society
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <p class="lead">
+                        ‣ Translated, conducted, and coordinated on-air interviews for Mexico’s largest radio station EXA FM
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <p class="lead">
+                        ‣ Taught the basics of Python to middle school students during a 2-week course
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <p class="lead">
+                       ‣ Spoken Languages: Spanish (native), English (fluent), and German (Goethe B1 Certificate)
+                      </p>
                     </div>
                   </div>
                 </div>
