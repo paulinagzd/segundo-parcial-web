@@ -1,7 +1,33 @@
 <template>
   <div>
+   <nav class="navbar navbar-light navbar-expand-sm" style="background-color: #ffd1dc;">
+      <a class="navbar-brand" href="#">></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#education">Education <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#experience">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#pd">Professional Development</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#other">Extracurricular Activities</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
       <!-- ======= Intro Section ======= -->
-  <div id="home" class="intro route bg-image" style="background-image: url(assets/img/intro-bg.jpg)">
+  <div id="home" class="intro route bg-image" v-bind:style="cssProps">
     <div class="overlay-itro"></div>
     <div class="intro-content display-table">
       <div class="table-cell">
@@ -15,25 +41,20 @@
     </div>
   </div><!-- End Intro Section -->
       <!-- ======= Education ======= -->
-    <section id="about" class="about-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
+    <section id="about" class="about-mf sect-pt4 route" v-bind:style="{'background-color': '#ffd1dc'}">
+      <div class="container" >
+        <div class="row" id="education">
           <div class="col-sm-12">
             <div class="box-shadow-full">
               <div class="row">
                 <div class="col-md-6">
                   <div class="row">
-                    <div class="col-sm-6 col-md-5">
-                      <div class="about-img">
-                        <img src="assets/img/testimonial-2.jpg" class="img-fluid rounded b-shadow-a" alt="">
-                      </div>
+                    <div class="col-sm-3 col-md-2">
+
                     </div>
                     <div class="col-sm-6 col-md-7">
                       <div class="about-info">
-                        <p><span class="title-s">Name: </span> <span>Morgan Freeman</span></p>
-                        <p><span class="title-s">Profile: </span> <span>full stack developer</span></p>
-                        <p><span class="title-s">Email: </span> <span>contact@example.com</span></p>
-                        <p><span class="title-s">Phone: </span> <span>(617) 557-0089</span></p>
+                        <img src="../assets/img/linkedin.jpg" class="img-fluid b-shadow-a rounded-img" style="border-radius=50%" alt="">
                       </div>
                     </div>
                   </div>
@@ -45,15 +66,14 @@
                         Education
                       </h5>
                     </div>
-                    <p class="lead">
-                      Monterrey Institute Of Technology and Higher Education
-                    </p>
-                    <p class="lead">
-                      Graduation expected Spring 2022
-                    </p>
-                    <p class="lead">
-                      GPA 87/100
-                    </p>
+                    <div v-for="post in posts" :key="post.id">
+                      <div v-if="post.area === 'Education'">
+                        <h4>{{post.title}}</h4>
+                        <p class="lead">
+                          {{post.body}}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -63,8 +83,8 @@
       </div>
     </section><!-- End About Section -->
     <!-- ======= Experience EXPERIENCE Section ======= -->
-    <section id="about" class="about-mf sect-pt4 route">
-      <div class="container">
+    <section id="about" class="about-mf sect-pt4 route" v-bind:style="{'background-color': '#ffd1dc'}">
+      <div class="container" id="experience">
         <div class="row">
           <div class="col-sm-12">
             <div class="box-shadow-full">
@@ -84,7 +104,7 @@
                         </p>
                       </div>
                     <div class="col-md-2"></div>
-                    <div class="col-md-2"> <p class="lead"> {{post.year}} </p>
+                    <div class="col-md-2 text-right"> <p class="lead"> {{post.year}} </p>
                     </div>
                     </div>
                   </div>
@@ -96,9 +116,80 @@
       </div>
     </section><!-- End Experience EXPERIENCE Section -->
 
+    <!-- ======= MAJOR PROJECTS Section ======= -->
+    <section id="about" class="about-mf sect-pt4 route" v-bind:style="{'background-color': '#ffd1dc'}">
+      <div class="container" id="projects">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="box-shadow-full">
+              <div class="row">
+                <div class="title-box-2">
+                  <h5 class="title-left">
+                    Projects
+                  </h5>
+                </div>
+                <div v-for="post in posts" :key="post.id" class="about-me pt-4 pt-md-0">
+                  <div v-if="post.area === 'Project'">
+                    <div class="row">
+                      <div class="col-md-8">
+                        <h4>{{post.title}}</h4>
+                        <p class="lead">
+                          {{post.body}}
+                        </p>
+                      </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2 text-right"> <p class="lead"> {{post.year}} </p>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End MAJOR PROJECTS Section -->
+
+        <!-- ======= PROFESSIONAL DEVELOPMENT Section ======= -->
+    <section id="about" class="about-mf sect-pt4 route" v-bind:style="{'background-color': '#ffd1dc'}">
+      <div class="container" id="pd">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="box-shadow-full">
+              <div class="row">
+                <div class="title-box-2">
+                  <h5 class="title-left">
+                    Professional Development
+                  </h5>
+                </div>
+                <div v-for="post in posts" :key="post.id" class="about-me pt-4 pt-md-0">
+                  <div v-if="post.area === 'PD'">
+                    <div class="row">
+                      <div class="col-sm-3 col-md-3">
+                        <img v-if="post.title === 'President | Women in Technology at ITESM (WIT)'" src="../assets/img/wit.png" class="img-fluid b-shadow-a rounded-img" style="border-radius=50%" alt="">
+                        <img v-else src="../assets/img/twitter.png" class="img-fluid b-shadow-a rounded-img" style="border-radius=50%" alt="">
+                      </div>
+                      <div class="col-md-6">
+                        <h4>{{post.title}}</h4>
+                        <p class="lead">
+                          {{post.body}}
+                        </p>
+                      </div>
+                    <div class="col-md-2 text-right"> <p class="lead"> {{post.year}} </p>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End PROFESSIONAL DEVELOPMENT Section -->
+
     <!-- ======= OTHER Section ======= -->
-    <section id="about" class="about-mf sect-pt4 route">
-      <div class="container">
+    <section id="about" class="about-mf sect-pt4 route" v-bind:style="{'background-color': '#ffd1dc'}">
+      <div class="container" id="other">
         <div class="row">
           <div class="col-sm-12">
             <div class="box-shadow-full">
@@ -111,14 +202,11 @@
                 <div v-for="post in posts" :key="post.id" class="about-me pt-4 pt-md-0">
                   <div v-if="post.area === 'Other'">
                     <div class="row">
-                      <div class="col-md-8">
+                      <div class="col-md-12">
                         <p class="lead">
                           {{post.body}}
                         </p>
                       </div>
-                    <div class="col-md-2"></div>
-                    <div class="col-md-2"> <p class="lead"> {{post.year}} </p>
-                    </div>
                     </div>
                   </div>
                 </div>
@@ -128,6 +216,7 @@
         </div>
       </div>
     </section><!-- End OTHER Section -->
+
   </div>
 </template>
 
@@ -145,6 +234,9 @@ export default {
       loading: false,
       posts: [],
       model: {},
+      cssProps: {
+          backgroundImage: `url(${require('../assets/img/andromeda.png')})`
+      },
     };
   },
   async created() {
