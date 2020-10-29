@@ -32,10 +32,8 @@
     <div class="intro-content display-table">
       <div class="table-cell">
         <div class="container">
-          <!--<p class="display-6 color-d">Hello, world!</p>-->
           <h1 class="intro-title mb-4">Paulina González Dávalos</h1>
           <p class="intro-subtitle"><span class="text-slider-items">CEO DevFolio,Web Developer,Web Designer,Frontend Developer,Graphic Designer</span><strong class="text-slider"></strong></p>
-          <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
         </div>
       </div>
     </div>
@@ -216,7 +214,7 @@
         </div>
       </div>
     </section><!-- End OTHER Section -->
-
+    <ScrollTopArrow></ScrollTopArrow>
   </div>
 </template>
 
@@ -227,10 +225,15 @@
 
 <script>
 import api from '@/api';
+import ScrollTopArrow from '@/components/Arrow';
 
 export default {
+    components: {
+    ScrollTopArrow
+  },
   data() {
     return {
+      visible: false,
       loading: false,
       posts: [],
       model: {},
@@ -270,6 +273,6 @@ export default {
         await this.refreshPosts();
       }
     },
-  },
+  }
 };
 </script>

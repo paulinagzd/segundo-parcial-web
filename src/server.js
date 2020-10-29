@@ -68,7 +68,7 @@ const userResource = finale.resource({
 
 // Resets the database and launches the express app on :8081
 database
-  .sync({ force: true })
+  .sync({ force: false })
   .then(() => {
     app.listen(8081, () => {
       console.log('listening to port localhost:8081');
