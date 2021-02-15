@@ -1,8 +1,5 @@
 # segundo-parcial-web
 
-## DEMO
-https://drive.google.com/file/d/1XTrdSKiRK_vrHms_KvbJR1OtjkVyUYsI/view?usp=sharing
-
 > A Vue.js project
 
 ## Build Setup
